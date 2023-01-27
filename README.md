@@ -8,20 +8,24 @@
 
 ## Setup
 
-1. From the project root, install dependancies by running: `$ composer install`
+1. Clone the repo localy `git clone https://github.com/777marc/vumc-github-stars.git`
 
-2. create a new .env file and copy contents of .env.example into it
+2. cd into the new repo
 
-3. Next, run `./vendor/bin/sail up -d`
-4. Next, run `./vendor/bin/sail php artisan migrate` to created the database (this may fail the first time, just run it again if it does)
+3. From the project root, install dependancies by running: `$ composer install`
 
-5. Install client dependencies: `./vendor/bin/sail npm i`
+4. create a new .env file and copy contents of .env.example into it
 
-6. Build client: `./vendor/bin/sail npm run build`
+5. Next, run `./vendor/bin/sail up -d`
+6. Next, run `./vendor/bin/sail php artisan migrate` to created the database (this may fail the first time, just run it again if it does)
 
-7. Run the client: `./vendor/bin/sail npm run dev`
+7. Install client dependencies: `./vendor/bin/sail npm i`
 
-8. Run Test: `php artisan test` (this will seed the db using the GithubStars Factory)
+8. Build client: `./vendor/bin/sail npm run build`
+
+9. Run the client: `./vendor/bin/sail npm run dev`
+
+10. Run Test: `php artisan test` (this will seed the db using the GithubStars Factory)
 
 ## Notes
 
