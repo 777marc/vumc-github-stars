@@ -50,6 +50,7 @@ class GithubService implements GithubServiceInterface
                 'number_of_starts' => $item->stargazers_count,
             ]);
         }
+        return GithubStar::all();
     }
     
 }
