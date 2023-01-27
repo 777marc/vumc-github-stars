@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\GithubStar;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Services\Github;
 
 class GithubStarsController extends Controller
 {
@@ -16,72 +17,24 @@ class GithubStarsController extends Controller
     public function index()
     {
         $allStars = GithubStar::all();
-        return Inertia::render('Stars', ['stars' => $allStars]);    
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        if (count($allStars) === 0) {
+            $gitRepos = new Github();
+            $gitRepos->init();
+        }
+        return Inertia::render('Stars', ['stars' => $allStars]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function refresh(Request $request)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $gitRepos = new Github();
+        $gitRepos->init();
+        $allStars = GithubStar::all();
+        return Inertia::render('Stars', ['stars' => $allStars]);
     }
 }

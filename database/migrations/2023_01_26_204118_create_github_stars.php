@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('github_stars', function (Blueprint $table) {
             $table->id();
-            $table->string('repository_id', 256);
+            $table->integer('repository_id')->default(0);
             $table->string('name', 256);
             $table->string('url', 512);
-            $table->date('created_date');
-            $table->date('last_publish_date');
+            $table->dateTime('created_date');
+            $table->dateTime('last_publish_date');
             $table->text('description');
             $table->integer("number_of_starts");
             $table->timestamps();

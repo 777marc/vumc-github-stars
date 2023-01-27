@@ -25,22 +25,10 @@ class GithubStarFactory extends Factory
                 'created_date' => $faker->dateTime(),
                 'last_publish_date' => $faker->dateTime(),
                 'description' => $faker->sentence(3),
-                'number_of_starts' => $faker->randomDigit(),
+                'number_of_starts' => $faker->randomNumber(5, true),
                 'updated_at' => $faker->dateTime(),
                 'created_at' => $faker->dateTime(),
             ])
-
-            // DB::table('github_stars')->insert([
-            //     'repository_id' => $faker->randomNumber(5, true),
-            //     'name' => $faker->word(),
-            //     'url' => $faker->safeEmailDomain(),
-            //     'created_date' => $faker->dateTime(),
-            //     'last_publish_date' => $faker->dateTime(),
-            //     'description' => $faker->sentence(3),
-            //     'number_of_starts' => $faker->randomDigit(),
-            //     'updated_at' => $faker->dateTime(),
-            //     'created_at' => $faker->dateTime(),
-            // ])
         ];
     }
 }
