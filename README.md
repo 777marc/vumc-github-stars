@@ -15,3 +15,10 @@
 ### 6. Run the client: `./vendor/bin/sail npm run dev`
 
 ### 7. Run Test: `php artisan test` (this will seed the db using the GithubStars Factory)
+
+## Notes
+
+-- services
+-- stack (laravel, react)
+-- db (migrations, seeders)
+-- test (2 simple feature tests)
