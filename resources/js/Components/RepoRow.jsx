@@ -14,7 +14,7 @@ export default function RepoRow(props) {
                 </td>
                 <td className="border px-8 py-2 text-slate-800">
                     <button
-                        className="shadow-lg text-white bg-[#37515c] rounded-sm border-4 px-8 border-gray-500/50"
+                        className="shadow-lg text-white bg-gray-600 rounded-sm border-2 px-8 border-gray-400"
                         onClick={() => setShowModal(true)}
                     >
                         Details

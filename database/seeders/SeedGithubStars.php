@@ -15,6 +15,6 @@ class SeedGithubStars extends Seeder
      */
     public function run()
     {
-        GithubStar::factory()->count(25)->create();
+        GithubStar::factory()->create();
     }
 }

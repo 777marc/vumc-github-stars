@@ -32,7 +32,12 @@ class GithubStarsController extends Controller
     {
         $allStars = GithubStar::all();
         if (count($allStars) === 0) {
-            $this->githubService->init();
+
+            try {
+                $this->githubService->init();
+            } catch(\Exception) {
+                $allStars = [];
+            }
         }
         return Inertia::render('Stars', ['stars' => $allStars]);
     }

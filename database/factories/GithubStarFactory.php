@@ -17,18 +17,15 @@ class GithubStarFactory extends Factory
     {
         $faker = Faker::create();
         return [
-
-            GithubStar::create([
-                'repository_id' => $faker->randomNumber(5, true),
-                'name' => $faker->word(),
-                'url' => $faker->safeEmailDomain(),
-                'created_date' => $faker->dateTime(),
-                'last_publish_date' => $faker->dateTime(),
-                'description' => $faker->sentence(3),
-                'number_of_starts' => $faker->randomNumber(5, true),
-                'updated_at' => $faker->dateTime(),
-                'created_at' => $faker->dateTime(),
-            ])
+            'repository_id' => $faker->randomNumber(5, true),
+            'name' => $faker->word(),
+            'url' => $faker->safeEmailDomain(),
+            'created_date' => $faker->dateTime(),
+            'last_publish_date' => $faker->dateTime(),
+            'description' => $faker->sentence(3),
+            'number_of_starts' => $faker->randomNumber(5, true),
+            'updated_at' => $faker->dateTime(),
+            'created_at' => $faker->dateTime(),
         ];
     }
 }
