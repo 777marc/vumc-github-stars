@@ -2,21 +2,17 @@
 
 namespace App\Services;
 
+use App\Interfaces\GithubServiceInterface;
 use App\Models\GithubStar;
 use Carbon\Carbon;
 
-class Github
+class GithubService implements GithubServiceInterface
 {
-    public function __construct()
-    {
-        
-    }
-
     public function getRepos()
     {
         $curl = curl_init();
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.github.com/search/repositories?q=Q&language:php&sort=stars&order=desc&per_page=10",
+            CURLOPT_URL => "https://api.github.com/search/repositories?q=Q+language:php&sort=stars&order=desc&per_page=10",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_TIMEOUT => 30000,

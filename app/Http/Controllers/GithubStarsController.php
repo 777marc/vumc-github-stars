@@ -2,24 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Interfaces\GithubServiceInterface;
 use App\Models\GithubStar;
+use App\Services\GithubService;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use App\Services\Github;
+use Inertia\Inertia\Response;
 
 class GithubStarsController extends Controller
 {
+
+    private GithubServiceInterface $githubService;
+
+    /**
+     *
+     * @param GithubServiceInterface $githubService
+     */
+    public function __construct(GithubServiceInterface $githubService) 
+    {
+        $this->githubService = $githubService;
+    }
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
         $allStars = GithubStar::all();
         if (count($allStars) === 0) {
-            $gitRepos = new Github();
-            $gitRepos->init();
+            $this->githubService->init();
         }
         return Inertia::render('Stars', ['stars' => $allStars]);
     }
@@ -27,14 +40,12 @@ class GithubStarsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return void
      */
     public function refresh(Request $request)
     {
-        $gitRepos = new Github();
-        $gitRepos->init();
-        $allStars = GithubStar::all();
-        return Inertia::render('Stars', ['stars' => $allStars]);
+        $this->githubService->init();
+        return redirect('/');
     }
 }
