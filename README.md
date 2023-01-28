@@ -33,7 +33,7 @@
     I created a service provider for the Github api calls to make it easier and cleaner to use in the controller. I stopped short of build a repository for the results since the interaction with the data was minimal.
 -   stack: (laravel, react)
     This solution was built on Laravel 9 with a React front end. I was able to leverage their Sail package to easily containerize the solution.
--   db (migrations, seeders)
+-   db: (migrations, seeders)
     The db is pretty straight forward as it only has one table. I created a migration for its inital creation and a seeder class to populate it for testing.
 -   test: (2 simple feature tests)
     There's a test to make sure that the main page loads with a 200 status and another to test that we're recieving data from the service.
