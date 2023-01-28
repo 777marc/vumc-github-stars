@@ -30,7 +30,7 @@
 ## Notes
 
 -   services:
-    I created a service provider for the Github api calls to make it easier and cleaner to use in the controller. I stopped short of build a repository for the results since the interaction with the data was minimal.
+    I created a service provider for the Github api calls to make it easier and cleaner to use in the controller. I stopped short of building a repository for the results since the interaction with the data was minimal.
 -   stack: (laravel, react)
     This solution was built on Laravel 9 with a React front end. I was able to leverage their Sail package to easily containerize the solution.
 -   db: (migrations, seeders)
