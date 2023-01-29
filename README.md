@@ -16,7 +16,7 @@
 
 4. create a new .env file and copy contents of .env.example into it
 
-5. Next, run `$  ./vendor/bin/sail up -d`
+5. Next, run `$ ./vendor/bin/sail up -d`
 6. Next, run `$ ./vendor/bin/sail php artisan migrate` to created the database (this may fail the first time, just run it again if it does)
 
 7. Install client dependencies: `$ ./vendor/bin/sail npm i`
