@@ -25,7 +25,9 @@
 
 9. Run the client: `./vendor/bin/sail npm run dev`
 
-10. Run Tests: `php artisan test` (this will seed the db using the GithubStars Factory)
+10. Go to http://localhost/ to view the application
+
+11. Run Tests: `php artisan test` (this will seed the db using the GithubStars Factory)
 
 ## Notes
 
